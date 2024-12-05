@@ -30,10 +30,10 @@ Run the following in a local command prompt:
 
 This creates a WAR file inside the `build/libs` directory and a CICS bundle ZIP file inside the `build/distributions` directory.
 
-If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should be modified using the `jvmserver` property in the gradle build [file](build.gradle) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows.
+If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should be modified using the `cics.jvmserver` property in the gradle build [file](build.gradle) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows.
 
 
-`gradle clean build -Pjvmserver=MYJVM`
+`gradle clean build -Pcics.jvmserver=MYJVM`
 
 
 #### Maven (command line)
@@ -44,13 +44,13 @@ First install the generated JAR file into the local Maven repository by running 
 
 Next run the following in a local command prompt which will create a WAR file.
 
-`mvn clean verify`
+`mvn clean package`
 
 This creates a WAR file in the `target` directory. 
 
-If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the <jvmserver> property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows. 
+If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the <cics.jvmserver> property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows. 
 
-`mvn clean verify -Djvmserver=MYJVM`
+`mvn clean package -Djvmserver=MYJVM`
 
 
 
