@@ -49,7 +49,7 @@
 							<groupId>com.ibm.cics</groupId>
 							<artifactId>com.ibm.cics.server.invocation</artifactId>
 							<version>6.1</version>
-						</annotationProcessorPath>
+						</annotationProcessorPath>			
 					</annotationProcessorPaths>
 				</configuration>
 			  </plugin>
@@ -58,14 +58,14 @@
 				<!-- CICS bundle build, specify <jvmserver> value to match CICS JVMSERVER name -->
 				<groupId>com.ibm.cics</groupId>
 				<artifactId>cics-bundle-maven-plugin</artifactId>
-				<version>1.0.6</version>
+				<version>1.0.7</version>
 				<executions>
 				  <execution>
 					<goals>
 					  <goal>bundle-war</goal>
 					</goals>								
 					<configuration>
-					  <jvmserver>${jvmserver}</jvmserver>
+					  <jvmserver>${cics.jvmserver}</jvmserver>
 					</configuration>
 				  </execution>
 				</executions>
@@ -75,14 +75,11 @@
 	</build>
 
 	<properties>
-		<java.version>1.8</java.version>	
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<jvmserver>DFHWLP</jvmserver>
+		<cics.jvmserver>DFHWLP</cics.jvmserver>
 	  </properties>
 
-	<!-- CICS TS V5.5 BOM (as of May 2020) -->
+	
+	<!-- CICS TS V5.5 BOM (as of May 2020) 5.5-20200519131930-PH25409 -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
