@@ -80,7 +80,6 @@
 
 	
 	<!-- CICS TS V5.5 BOM (as of May 2020) 5.5-20200519131930-PH25409 -->
-	<!-- CICS TS V5.5 BOM (as of May 2020) 6.1-20240903141936-PH59389 -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
