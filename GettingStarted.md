@@ -38,7 +38,7 @@ If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should b
 
 #### Maven (command line)
 
-First install the generated JAR file into the local Maven repository by running the following Maven command in a local command prompt
+First install the generated JAR file into a local Maven repository by running the following Maven command in a local command prompt
 
 `mvn org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file -Dfile=lib/cics-java-liberty-restappext-generated.jar -DgroupId=com.ibm.cicsdev -DartifactId=cics-java-liberty-restappext-generated -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=local-repo`
 
@@ -48,7 +48,7 @@ Next run the following in a local command prompt which will create a WAR file.
 
 This creates a WAR file in the `target` directory. 
 
-If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the <cics.jvmserver> property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows. 
+If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the `<cics.jvmserver>` property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows. 
 
 `mvn clean verify -Dcics.jvmserver=MYJVM`
 
