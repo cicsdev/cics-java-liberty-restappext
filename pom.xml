@@ -7,8 +7,8 @@
 
 	<!-- Application properties -->
 	<groupId>com.ibm.cicsdev</groupId>
-	<artifactId>cics-java-liberty-restapp-ext</artifactId>
-	<name>cics-java-liberty-restapp-ext</name>
+	<artifactId>cics-java-liberty-restappext</artifactId>
+	<name>cics-java-liberty-restappext</name>
 	<version>0.1.0</version>
 	<description>Sample JAX-RS RESTful web application for Liberty that links to a CICS® COBOL program </description>	
 
@@ -17,7 +17,7 @@
 
 	<repositories>
 		<repository>
-		  <id>cics-java-liberty-restapp-ext</id>
+		  <id>cics-java-liberty-restappext</id>
 		  <name>Project libraries</name>
 		  <url>file://${project.basedir}/local-repo</url>
 		  <releases>
