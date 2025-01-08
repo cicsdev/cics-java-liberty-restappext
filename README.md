@@ -45,37 +45,37 @@ The VSAM examples use the sample file `SMPLXMPL`. For a sample CICS FILE definit
 
 The sample can be built using the supplied Gradle or Maven build files to produce a WAR file and optionally a CICS Bundle archive.
 
-#### Gradle (command line)
+### Building with Gradle
 
-Run the following in a local command prompt:
+A WAR file is created inside the `build/libs` directory and a CICS bundle ZIP file inside the `build/distributions` directory.
 
-`gradle clean build`
+If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should be modified using the `cics.jvmserver` property in the gradle build [file](build.gradle) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line.
 
-This creates a WAR file inside the `build/libs` directory and a CICS bundle ZIP file inside the `build/distributions` directory.
+| Tool | Command |
+| ----------- | ----------- |
+| Gradle Wrapper (Linux/Mac) | ```./gradlew clean build``` |
+| Gradle Wrapper (Windows) | ```gradle.bat clean build``` |
+| Gradle (command-line) | ```gradle clean build``` |
+| Gradle (command-line & setting jvmserver) | ```gradle clean build -Pcics.jvmserver=MYJVM``` |
 
-If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should be modified using the `cics.jvmserver` property in the gradle build [file](build.gradle) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows.
-
-
-`gradle clean build -Pcics.jvmserver=MYJVM`
-
-
-#### Maven (command line)
+### Building with Maven
 
 First install the generated JAR file into a local Maven repository by running the following Maven command in a local command prompt
 
 `mvn org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file -Dfile=lib/cics-java-liberty-restappext-generated.jar -DgroupId=com.ibm.cicsdev -DartifactId=cics-java-liberty-restappext-generated -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=local-repo`
 
-Next run the following in a local command prompt which will create a WAR file.
+Next, run the appropriate Maven build command. This creates a WAR file in the `target` directory. 
 
-`mvn clean verify`
+If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the `<cics.jvmserver>` property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line. 
 
-This creates a WAR file in the `target` directory. 
+| Tool | Command |
+| ----------- | ----------- |
+| Maven Wrapper (Linux/Mac) | ```./mvnw clean verify``` |
+| Maven Wrapper (Windows) | ```mvnw.cmd clean verify``` |
+| Maven (command-line) | ```mvn clean verify``` |
+| Maven (command-line & setting jvmserver) | ```mvn clean verify -Dcics.jvmserver=MYJVM``` |
 
-If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the `<cics.jvmserver>` property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line as follows. 
-
-`mvn clean verify -Dcics.jvmserver=MYJVM`
-
-
+## Deployment 
 ### To start a JVM server in CICS:
 
 1. Define a Liberty JVM server called `DFHWLP` using the supplied sample definition `DFHWLP` in the CSD group `DFH$WLP`.
