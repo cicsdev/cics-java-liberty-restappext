@@ -51,12 +51,22 @@ A WAR file is created inside the `build/libs` directory and a CICS bundle ZIP fi
 
 If using the CICS bundle ZIP, the default CICS JVM server name `DFHWLP` should be modified using the `cics.jvmserver` property in the gradle build [file](build.gradle) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line.
 
-| Tool | Command |
-| ----------- | ----------- |
-| Gradle Wrapper (Linux/Mac) | ```./gradlew clean build``` |
-| Gradle Wrapper (Windows) | ```gradle.bat clean build``` |
-| Gradle (command-line) | ```gradle clean build``` |
-| Gradle (command-line & setting jvmserver) | ```gradle clean build -Pcics.jvmserver=MYJVM``` |
+**Gradle Wrapper (Linux/Mac):**
+```shell
+./gradlew clean build
+```
+**Gradle Wrapper (Windows):**
+```shell
+gradle.bat clean build
+```
+**Gradle (command-line):**
+```shell
+gradle clean build
+```
+**Gradle (command-line & setting jvmserver):**
+```shell
+gradle clean build -Pcics.jvmserver=MYJVM
+```
 
 ### Building with Maven
 
@@ -68,12 +78,22 @@ Next, run the appropriate Maven build command. This creates a WAR file in the `t
 
 If building a CICS bundle ZIP the CICS bundle plugin bundle-war goal is driven using the maven verify phase. The CICS JVM server name should be modified in the `<cics.jvmserver>` property in the [`pom.xml`](pom.xml) to match the required CICS JVMSERVER resource name, or alternatively can be set on the command line. 
 
-| Tool | Command |
-| ----------- | ----------- |
-| Maven Wrapper (Linux/Mac) | ```./mvnw clean verify``` |
-| Maven Wrapper (Windows) | ```mvnw.cmd clean verify``` |
-| Maven (command-line) | ```mvn clean verify``` |
-| Maven (command-line & setting jvmserver) | ```mvn clean verify -Dcics.jvmserver=MYJVM``` |
+**Maven Wrapper (Linux/Mac):**
+```shell
+./mvnw clean verify
+```
+**Maven Wrapper (Windows):**
+```shell
+mvnw.cmd clean verify
+```
+**Maven (command-line):**
+```shell
+mvn clean verify
+```
+**Maven (command-line & setting jvmserver):**
+```shell
+mvn clean verify -Dcics.jvmserver=MYJVM
+```
 
 ## Deployment 
 ### To start a JVM server in CICS:
