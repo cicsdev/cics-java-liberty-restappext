@@ -1,6 +1,9 @@
 # Maintainers
 
-- Phil Wakelin [@PhilWakelin](https://github.com/PhilWakelin)
 - Aaron Jhaj [@AaronJhaj](https://github.com/AaronJhaj)
 
-*Last reviewed:* January 2025
+## Former maintainers
+
+- Phil Wakelin [@PhilWakelin](https://github.com/PhilWakelin)
+
+*Last reviewed:* May 2026
